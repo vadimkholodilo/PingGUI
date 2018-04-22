@@ -1,0 +1,29 @@
+﻿<Window x:Class="PingGUI.PingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingGUI"
+        mc:Ignorable="d"
+        Title="PingGUI" Height="450" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Экспорт в CSV" Click="ExportToCSVButton" />
+                <MenuItem Header="Выход" Click="ExitButton" />
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="resultsGrid" AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path=DT}" />
+                <DataGridTextColumn Header="Время прохождения пакета (МС)" Binding="{Binding Path=RTT}" />
+                <DataGridTextColumn Header="Время жизни пакета (МС)" Binding="{Binding Path=TTL}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel>
+            <Button x:Name="ping" Content="Ping" Click="PingButton" Height="30" Width="70" />
+
+       </StackPanel>
+    </Grid>
+</Window>

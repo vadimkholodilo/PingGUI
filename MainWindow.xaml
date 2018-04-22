@@ -1,0 +1,18 @@
+﻿<Window x:Class="PingGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingGUI"
+        mc:Ignorable="d"
+        Title="PingGUI" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="hostLabel"> Доменное имя или IP адрес </TextBlock>
+            <TextBox x:Name="host" AutomationProperties.Name="{Binding ElementName=hostLabel,Path=Text}"/>
+            <TextBlock x:Name="intervalLabel"> Интервал (в секундах)</TextBlock>
+            <TextBox x:Name="interval" PreviewTextInput="CheckSimbles" AutomationProperties.Name="{Binding ElementName=intervalLabel,Path=Text}" />
+            <Button x:Name="start" Content="Старт" Click="StartButton" Height="30" Width="70" />
+        </StackPanel>
+    </Grid>
+</Window>
