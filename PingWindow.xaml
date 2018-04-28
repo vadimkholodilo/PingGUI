@@ -9,8 +9,10 @@
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Экспорт в CSV" Click="ExportToCSVButton" />
-                <MenuItem Header="Выход" Click="ExitButton" />
+<MenuItem Header="Экспорт...">
+            <MenuItem Header="Экспорт в CSV" Click="ExportToCSVButton" />
+</MenuItem>
+            <MenuItem Header="Выход" Click="ExitButton" />
             </MenuItem>
         </Menu>
         <DataGrid x:Name="resultsGrid" AutoGenerateColumns="False" IsReadOnly="True" >
